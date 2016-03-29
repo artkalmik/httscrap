@@ -20,8 +20,8 @@ defmodule Httscrap do
 
   def get_video(url, output_filename) do
     navigate_to url
-    page_source() |> Floki.find("source") |> Floki.attribute("src") |> download(output_filename)
+    video_src = page_source() |> Floki.find("source") |> Floki.attribute("src")
+    spawn(Scraper, :download, [video_src, output_filename])
   end
 
-  
 end
