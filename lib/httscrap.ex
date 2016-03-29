@@ -18,5 +18,10 @@ defmodule Httscrap do
     IO.puts "Done Downloading #{src} -> #{output_filename}"
   end
 
+  def get_video(url, output_filename) do
+    navigate_to url
+    page_source() |> Floki.find("source") |> Floki.attribute("src") |> download(output_filename)
+  end
+
   
 end
