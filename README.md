@@ -1,20 +1,17 @@
 # Httscrap
 
-**TODO: Add description**
+## Using
 
-## Installation
+Code example:
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+  1. To log in fill login and pass in lib/httscrap aqnd run:
 
-  1. Add httscrap to your list of dependencies in `mix.exs`:
+        Httscrap.start
 
-        def deps do
-          [{:httscrap, "~> 0.0.1"}]
-        end
+  2. To download a file just run:
 
-  2. Ensure httscrap is started before your application:
+        Httscrap.download("http://example.com", "test.html")
 
-        def application do
-          [applications: [:httscrap]]
-        end
+  3. To get video run:
 
+        Httscrap.get_video("http://example.com/video", "test.mp4")
