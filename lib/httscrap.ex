@@ -10,4 +10,13 @@ defmodule Httscrap do
     fill_field(el, 'mypass')
     submit_element(el)
   end
+
+  def download(src, output_filename) do
+    IO.puts "Downloading #{src} -> #{output_filename}"
+    body = HTTPoison.get!(src).body
+    File.write!(output_filename, body)
+    IO.puts "Done Downloading #{src} -> #{output_filename}"
+  end
+
+  
 end
