@@ -27,6 +27,10 @@ defmodule Httscrap.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:httpoison, "~> 0.5"},
+      {:floki, "~> 0.3"},
+      { :hound, "~> 0.6.0" }
+    ]
   end
 end
